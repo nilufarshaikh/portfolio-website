@@ -1,0 +1,198 @@
+@use "../partials/globals" as *;
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+
+.container {
+  position: relative;
+}
+
+.hero {
+  background-color: $bg-primary;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 3rem;
+  flex-direction: column;
+
+  @include desktop {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 4rem 6rem 1rem 6rem;
+  }
+
+  &__title {
+    font-size: 14px;
+    color: $bg-secondary;
+    font-weight: 500;
+
+    @include desktop {
+      font-size: 1.56rem;
+    }
+  }
+
+  &__wrapper {
+    width: calc(100% - 2rem);
+    margin: auto;
+
+    @include desktop {
+      width: 40%;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+
+    @include desktop {
+      display: none;
+    }
+
+    &--other {
+      display: none;
+
+      @include desktop {
+        display: block;
+        width: 35%;
+        max-width: 30vw;
+        position: absolute;
+        top: 25rem;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+    }
+  }
+
+  &__intro {
+    padding: 1rem;
+
+    @include desktop {
+      width: 50%;
+      padding: 10rem 0rem 5rem 3rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
+.about {
+  background-color: $bg-secondary;
+  color: white;
+  padding: 1rem;
+
+  @include desktop {
+    padding: 1rem 6rem 4rem 6rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: "Abril Fatface", serif;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 1rem;
+
+    @include desktop {
+      font-size: 6.25rem;
+      padding-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    @include desktop {
+      display: flex;
+      gap: 5rem;
+      padding-top: 5rem;
+    }
+  }
+
+  &__info {
+    font-size: 1.12rem;
+
+    &--para {
+      padding-bottom: 1rem;
+      font-size: 13px;
+
+      @include desktop {
+        // padding: 1rem 0;
+        padding: 2rem;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.skills {
+  width: 80%;
+  text-align: left;
+  margin-right: 2rem;
+
+  &__box {
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 13px;
+
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
+
+  &__bar {
+    border-radius: 2px;
+    background-color: white;
+
+    @include desktop {
+      border-radius: 5px;
+    }
+  }
+
+  &__percent {
+    background-color: $bg-primary;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    height: 0.8rem;
+
+    @include desktop {
+      height: 1.5rem;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    &--html-css {
+      width: 85%;
+    }
+
+    &--javascript {
+      width: 75%;
+    }
+
+    &--mysql {
+      width: 95%;
+    }
+
+    &--php {
+      width: 75%;
+    }
+
+    &--python {
+      width: 25%;
+    }
+
+    &--nodejs {
+      width: 25%;
+    }
+  }
+}
+
+.work-sample {
+  background-color: $bg-secondary;
+  color: white;
+  padding: 1rem;
+
+  @include desktop {
+    text-align: center;
+    padding: 1rem 6rem 4rem 6rem;
+  }
+}
